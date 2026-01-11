@@ -28,3 +28,14 @@ def store(record: json, collection_name: str, authorization: str) -> str:
 
 if __name__ == "__main__":
     mcp.run(transport="streamable-http", host="localhost", port=8000,log_level="DEBUG")
+    # to run the server using uvicorn with middleware
+    #mcp_app = mcp.streamable_http_app()
+
+    #mcp_app.add_middleware(
+    #    CORSMiddleware,
+    #    allow_origins=["*"],  # Allow all origins for development; restrict in production
+    #    allow_credentials=True,
+    #    allow_methods=["*"],
+    #    allow_headers=["*"],
+    #)
+    # uvicorn.run(mcp_app, host="localhost", port=8000, log_level="debug")
